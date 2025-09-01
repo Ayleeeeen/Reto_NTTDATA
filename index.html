@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">MiMarca</h1>
+      <nav class="space-x-6">
+        <a href="#features" class="hover:text-indigo-600">Features</a>
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-20 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Tu solución ideal en un solo lugar</h2>
+      <p class="text-lg mb-8">Descubre cómo nuestro producto/servicio puede ayudarte a alcanzar tus objetivos de manera más rápida y sencilla.</p>
+      <a href="#contact" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition">Comienza Ahora</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <div class="bg-white shadow-lg p-8 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-4">Fácil de Usar</h3>
+      <p>Diseñado para que cualquier persona pueda utilizarlo sin complicaciones.</p>
+    </div>
+    <div class="bg-white shadow-lg p-8 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-4">Seguro</h3>
+      <p>Protección de datos y privacidad garantizada en cada paso.</p>
+    </div>
+    <div class="bg-white shadow-lg p-8 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-4">Escalable</h3>
+      <p>Se adapta a tus necesidades, sin importar el tamaño de tu proyecto.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+      <p class="text-lg">Somos un equipo comprometido en ofrecer soluciones innovadoras y efectivas. Nuestra misión es brindarte la mejor experiencia y ayudarte a lograr tus metas.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
+    <form class="bg-white shadow-lg rounded-2xl p-8 space-y-6">
+      <input type="text" placeholder="Nombre" class="w-full border rounded-lg p-3" required />
+      <input type="email" placeholder="Correo" class="w-full border rounded-lg p-3" required />
+      <textarea placeholder="Mensaje" class="w-full border rounded-lg p-3 h-32" required></textarea>
+      <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 MiMarca. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

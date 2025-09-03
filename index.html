@@ -1,71 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQUATANK - Formulario de Contacto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f9ff;
+    }
+    /* Header */
+    header {
+      background-color: #061426;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contenedor */
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    /* Formulario */
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    form input[type="submit"] {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    form input[type="submit"]:hover {
+      background-color: #003580;
+    }
+
+    .inicio {
+    height: 100vh;
+    background-image: url('https://media.istockphoto.com/id/582256640/es/foto/refiner%C3%ADa-de-petr%C3%B3leo-planta-qu%C3%ADmica-y-petroqu%C3%ADmica.jpg?s=612x612&w=0&k=20&c=OIdQbQPiIxaF0z-BhSaBSxKZuMnkV9bKkLX-h8VN2Xs='); /* Aquí cambias la imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .overlay {
+    background: rgba(0, 74, 173, 0.6); /* Azul con transparencia */
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inicio-content {
+    text-align: center;
+    color: white;
+    max-width: 700px;
+    padding: 20px;
+  }
+  .inicio-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .inicio-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .btn-cta {
+    background-color: #ffffff;
+    color: #004aad;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  .btn-cta:hover {
+    background-color: #f4f9ff;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Sección genérica */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #004aad;
+    }
+
+    /* Beneficios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #0077ff;
+    }
+
+    .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 1rem;
+  background: #0077ff;
+  color: white;
+  margin: 0;
+}
+
+    /* Footer */
+    footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      opacity: 0.8;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+
   <!-- Header -->
-  <header class="bg-white shadow-md fixed w-full z-10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">MiMarca</h1>
-      <nav class="space-x-6">
-        <a href="#features" class="hover:text-indigo-600">Features</a>
-        <a href="#about" class="hover:text-indigo-600">About</a>
-        <a href="#contact" class="hover:text-indigo-600">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <h1>AQUATANK</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-28 pb-20 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Tu solución ideal en un solo lugar</h2>
-      <p class="text-lg mb-8">Descubre cómo nuestro producto/servicio puede ayudarte a alcanzar tus objetivos de manera más rápida y sencilla.</p>
-      <a href="#contact" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition">Comienza Ahora</a>
+  <!-- INICIO -->
+<div class="inicio" id="inicio">
+  <div class="overlay">
+    <div class="inicio-content">
+      <h2>Bienvenido a AQUATANK</h2>
+      <p>
+        En <strong>Aquatank</strong> somos especialistas en la fabricación y distribución de 
+      tanques de agua de alta resistencia. Ofrecemos productos en polietileno, acero y 
+      fibra de vidrio diseñados para asegurar el almacenamiento confiable en hogares, 
+      empresas e industrias. Nuestra misión es garantizar soluciones sostenibles y 
+      duraderas que cuiden uno de los recursos más importantes: el agua.
+      </p>
+      <a href="#contacto" class="btn-cta">Contáctanos</a>
+    </div>
+  </div>
+</div>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits">
+    <h2>¿Por qué elegir Aquatank?</h2>
+    <div class="benefits-grid">
+      <div class="card">
+        <h3>Alta Calidad</h3>
+        <p>Tanques resistentes fabricados con materiales de primera.</p>
+      </div>
+      <div class="card">
+        <h3>Variedad</h3>
+        <p>Amplia gama de capacidades desde 2,500 hasta 50,000 litros.</p>
+      </div>
+      <div class="card">
+        <h3>Durabilidad</h3>
+        <p>Diseños preparados para resistir condiciones extremas.</p>
+      </div>
+      <div class="card">
+        <h3>Soporte Técnico</h3>
+        <p>Acompañamiento en cada etapa del proceso de compra.</p>
+      </div>
+      <div class="card">
+        <h3>Ecológicos y Seguros</h3>
+        <p>Nuestros productos son fabricados con materiales no tóxicos y 100% reciclables.</p>
+      </div>
+      <div class="card">
+        <h3>Certificaciones de Calidad</h3>
+        <p>Cumplimos con estándares internacionales que garantizan seguridad.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="py-20 max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-    <div class="bg-white shadow-lg p-8 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-4">Fácil de Usar</h3>
-      <p>Diseñado para que cualquier persona pueda utilizarlo sin complicaciones.</p>
+  <section class="products" id="productos">
+  <h2>Nuestros Productos</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <img src="https://plastisur.com.pe/wp-content/uploads/2022/03/TANQUE-BEIGE-600.jpg" alt="Tanque de Polietileno">
+      <h3>Tanques de Polietileno</h3>
     </div>
-    <div class="bg-white shadow-lg p-8 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-4">Seguro</h3>
-      <p>Protección de datos y privacidad garantizada en cada paso.</p>
+    <div class="product-card">
+      <img src="https://sumiparts.com/wp-content/uploads/2022/02/tanques-acero-inoxidables-.jpg" alt="Tanque de Acero">
+      <h3>Tanques de Acero</h3>
     </div>
-    <div class="bg-white shadow-lg p-8 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-4">Escalable</h3>
-      <p>Se adapta a tus necesidades, sin importar el tamaño de tu proyecto.</p>
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXyfM7Z9YB8rpkMb1T_htBCRtEkX8iQ151yg&s" alt="Tanque de Fibra de Vidrio">
+      <h3>Tanques de Fibra de Vidrio</h3>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="py-20 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
-      <p class="text-lg">Somos un equipo comprometido en ofrecer soluciones innovadoras y efectivas. Nuestra misión es brindarte la mejor experiencia y ayudarte a lograr tus metas.</p>
-    </div>
-  </section>
+  <!-- Contenedor del formulario -->
+  <div class="container" id="contacto">
+    <h2 style="color: #004aad;">Formulario de Contacto</h2>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgL000008j6JE" method="POST">
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
-    <form class="bg-white shadow-lg rounded-2xl p-8 space-y-6">
-      <input type="text" placeholder="Nombre" class="w-full border rounded-lg p-3" required />
-      <input type="email" placeholder="Correo" class="w-full border rounded-lg p-3" required />
-      <textarea placeholder="Mensaje" class="w-full border rounded-lg p-3 h-32" required></textarea>
-      <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition">Enviar</button>
+      <input type="hidden" name="oid" value="00DgL000008j6JE">
+      <input type="hidden" name="retURL" value="http://">
+
+      <label for="company">Empresa</label>
+      <input id="company" maxlength="40" name="company" type="text" required>
+
+      <label for="00NgL00001US3Ar">RUC</label>
+      <input id="00NgL00001US3Ar" name="00NgL00001US3Ar" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" maxlength="80" name="email" type="email" required>
+
+      <label for="country_code">País</label>
+      <select id="country_code" name="country_code" required>
+        <option value="">--Seleccione--</option>
+        <option value="PE">Perú</option>
+        <option value="CL">Chile</option>
+        <option value="CO">Colombia</option>
+        <option value="MX">México</option>
+        <option value="US">Estados Unidos</option>
+        <!-- Puedes dejar todas las opciones si lo deseas -->
+      </select>
+
+      <label for="phone">Teléfono</label>
+      <input id="phone" maxlength="40" name="phone" type="text">
+
+      <label for="00NgL000016UdOo">Producto de Interés</label>
+      <select id="00NgL000016UdOo" name="00NgL000016UdOo">
+        <option value="">--Seleccione--</option>
+        <option value="TP Tanque de Polietileno">TP Tanque de Polietileno</option>
+        <option value="TA Tanque de Acero">TA Tanque de Acero</option>
+        <option value="TF Tanque de Fibra de Vidrio">TF Tanque de Fibra de Vidrio</option>
+      </select>
+
+      <label for="00NgL00001TXlNF">Capacidad del Tanque</label>
+      <select id="00NgL00001TXlNF" name="00NgL00001TXlNF">
+        <option value="">--Seleccione--</option>
+        <option value="2,500 L">2,500 L</option>
+        <option value="5,000 L">5,000 L</option>
+        <option value="10,000 L">10,000 L</option>
+        <option value="25,000 L">25,000 L</option>
+        <option value="50,000 L">50,000 L</option>
+      </select>
+
+      <label for="00NgL00001TXbvm">Presupuesto</label>
+      <input id="00NgL00001TXbvm" name="00NgL00001TXbvm" type="text">
+
+      <input type="submit" value="Enviar">
     </form>
-  </section>
+    
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; 2025 MiMarca. Todos los derechos reservados.</p>
+  <footer>
+    &copy; 2025 Aquatank - Todos los derechos reservados
   </footer>
+
 </body>
 </html>
+
